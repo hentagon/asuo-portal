@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asu o | 広報活動支援システム</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Hiragino Sans', 'Noto Sans JP', 'YuGothic', sans-serif;
+      background: #f5f7f4;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 480px;
+    }
+
+    /* ヘッダー */
+    .header {
+      text-align: center;
+      margin-bottom: 2.4rem;
+    }
+    .logo {
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: #1a472a;
+      letter-spacing: 0.1em;
+    }
+    .tagline {
+      font-size: 0.85rem;
+      color: #777;
+      margin-top: 0.4rem;
+    }
+
+    /* カード */
+    .card {
+      display: block;
+      border-radius: 18px;
+      padding: 1.8rem 2rem;
+      margin-bottom: 1.2rem;
+      text-decoration: none;
+      color: white;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.18);
+    }
+    .card:active {
+      transform: translateY(0px);
+    }
+
+    .card-v3 {
+      background: linear-gradient(135deg, #1a472a 0%, #2d8653 100%);
+    }
+    .card-v2 {
+      background: linear-gradient(135deg, #1044a3 0%, #1976D2 100%);
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 99px;
+      background: rgba(255,255,255,0.22);
+      margin-bottom: 0.7rem;
+      letter-spacing: 0.05em;
+    }
+    .card-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.02em;
+    }
+    .card-desc {
+      font-size: 0.82rem;
+      opacity: 0.85;
+      line-height: 1.7;
+    }
+    .card-arrow {
+      float: right;
+      font-size: 1.2rem;
+      opacity: 0.7;
+      margin-top: -2.8rem;
+    }
+
+    /* 区切り線 */
+    .divider {
+      border: none;
+      border-top: 1px solid #dde3d8;
+      margin: 1.8rem 0;
+    }
+
+    /* 使い方ガイド */
+    .guide-toggle {
+      width: 100%;
+      background: white;
+      border: 1px solid #d0d9cb;
+      border-radius: 12px;
+      padding: 0.9rem 1.2rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #444;
+      cursor: pointer;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .guide-toggle:hover { background: #f0f5ee; }
+    .guide-content {
+      display: none;
+      background: white;
+      border: 1px solid #d0d9cb;
+      border-top: none;
+      border-radius: 0 0 12px 12px;
+      padding: 1rem 1.2rem;
+      font-size: 0.83rem;
+      color: #555;
+      line-height: 1.8;
+    }
+    .guide-content.open { display: block; }
+    .guide-toggle.open { border-radius: 12px 12px 0 0; }
+    .guide-section { margin-bottom: 0.8rem; }
+    .guide-section strong { color: #1a472a; }
+    .chevron { transition: transform 0.2s; }
+    .guide-toggle.open .chevron { transform: rotate(180deg); }
+
+    /* フッター */
+    .footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #aaa;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- ヘッダー -->
+    <div class="header">
+      <div class="logo">🌿 Asu o</div>
+      <div class="tagline">地域活性化プロジェクト｜広報活動支援システム</div>
+    </div>
+
+    <!-- V3.0 登録カード -->
+    <a href="https://asu-o-demov30-erozuqbc7zblzchtfhucah.streamlit.app" target="_blank" class="card card-v3">
+      <div class="badge">データ登録</div>
+      <div class="card-icon">🗺</div>
+      <div class="card-title">広報活動を記録する</div>
+      <div class="card-desc">
+        地図上でポイント・エリアを指定して<br>
+        チラシ配布の記録を登録します。<br>
+        現場スタッフ向け
+      </div>
+      <div class="card-arrow">›</div>
+    </a>
+
+    <!-- V2.0 集計カード -->
+    <a href="https://asu-o-demov20-zgxncknh5ge7epadwnkhhe.streamlit.app" target="_blank" class="card card-v2">
+      <div class="badge">集計・確認</div>
+      <div class="card-icon">📊</div>
+      <div class="card-title">活動実績を確認する</div>
+      <div class="card-desc">
+        登録済みデータを大字・期間別に集計して<br>
+        活動状況を一覧で確認します。<br>
+        管理者・リーダー向け
+      </div>
+      <div class="card-arrow">›</div>
+    </a>
+
+    <hr class="divider">
+
+    <!-- 使い方ガイド -->
+    <button class="guide-toggle" onclick="toggleGuide(this)">
+      📖 使い方ガイド
+      <span class="chevron">▼</span>
+    </button>
+    <div class="guide-content" id="guide">
+      <div class="guide-section">
+        <strong>🗺 現場スタッフの方へ（緑のカード）</strong><br>
+        1. 合言葉を入力してログイン<br>
+        2. 「定点配布」または「戸別配布」タブを選ぶ<br>
+        3. 地図上に配布場所を置く（点）またはエリアを描く（面）<br>
+        4. 市町村・大字を確認して活動内容を入力<br>
+        5. 登録ボタンを押して完了
+      </div>
+      <div class="guide-section">
+        <strong>📊 管理者・リーダーの方へ（青いカード）</strong><br>
+        1. 合言葉を入力してログイン<br>
+        2. 期間・担当者・大字などで絞り込んで確認<br>
+        3. サマリータブで大字別ランキングを確認
+      </div>
+    </div>
+
+    <div class="footer">Asu o 広報活動支援システム</div>
+
+  </div>
+
+  <script>
+    function toggleGuide(btn) {
+      btn.classList.toggle('open');
+      document.getElementById('guide').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
